@@ -1,0 +1,73 @@
+<div class="register-wrapper">
+
+  <div class="register-card">
+
+    <div class="logo-area">
+      <i class="bi bi-recycle logo-icon"></i>
+      <h2>Create Account</h2>
+      <p>Join WasteZero Platform</p>
+    </div>
+
+    <form #regForm="ngForm">
+
+      <div class="input-group-modern">
+        <input type="text" name="name" ngModel required placeholder="Full Name">
+        <i class="bi bi-person"></i>
+      </div>
+
+      <div class="input-group-modern">
+        <input type="email" name="email" ngModel required placeholder="Email Address">
+        <i class="bi bi-envelope"></i>
+      </div>
+
+      <div class="input-group-modern">
+        <input 
+          [type]="showPassword ? 'text' : 'password'"
+          name="password"
+          ngModel
+          required
+          placeholder="Password">
+        <i class="bi"
+           [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"
+           (click)="togglePassword()"></i>
+      </div>
+
+      <div class="input-group-modern">
+        <input 
+          [type]="showConfirmPassword ? 'text' : 'password'"
+          name="confirmPassword"
+          ngModel
+          required
+          placeholder="Confirm Password">
+        <i class="bi"
+           [ngClass]="showConfirmPassword ? 'bi-eye-slash' : 'bi-eye'"
+           (click)="toggleConfirmPassword()"></i>
+      </div>
+
+      <div class="input-group-modern">
+        <select name="role" ngModel required>
+          <option value="" disabled selected>Select Role</option>
+          <option value="user">User</option>
+          <option value="volunteer">Volunteer</option>
+          <option value="admin">Admin</option>
+        </select>
+        <i class="bi bi-person-badge"></i>
+      </div>
+
+      <div class="input-group-modern">
+        <input type="text" name="location" ngModel required placeholder="Location">
+        <i class="bi bi-geo-alt"></i>
+      </div>
+
+      <button class="modern-btn">Register</button>
+
+    </form>
+
+    <div class="bottom-text">
+      Already have account?
+      <a routerLink="/login">Login</a>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,59 @@
+<div class="login-wrapper">
+
+    <div id="particles"></div>
+
+  <div class="floating-bg"></div>
+
+  <div class="login-card">
+
+    <div class="logo-area">
+      <i class="bi bi-recycle logo-icon"></i>
+      <h2>WasteZero</h2>
+      <p>Smart Waste Pickup Platform</p>
+    </div>
+
+    <form #loginForm="ngForm">
+
+      <div class="input-group-modern">
+        <i class="bi bi-envelope"></i>
+        <input type="email" name="email" ngModel required placeholder="Email Address">
+      </div>
+
+     <div class="input-group-modern">
+  <input 
+    [type]="showPassword ? 'text' : 'password'" 
+    name="password" 
+    ngModel 
+    required 
+    placeholder="Password">
+
+  <i class="bi"
+     [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"
+     (click)="togglePassword()">
+  </i>
+</div>
+
+      <button 
+  class="modern-btn"
+  [disabled]="isLoading"
+  (click)="onLogin()">
+
+  <span *ngIf="!isLoading">Login</span>
+
+  <span *ngIf="isLoading" class="spinner-wrapper">
+    <span class="spinner"></span>
+    Loading...
+  </span>
+
+</button>
+
+    </form>
+
+    <div class="bottom-text">
+      Don't have account?
+      <a routerLink="/register">Register</a>
+    </div>
+
+  </div>
+
+</div>
